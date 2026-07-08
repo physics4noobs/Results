@@ -224,7 +224,7 @@
 <div id="home-screen">
   <div class="date-banner">
     <div class="banner-left">
-      <div style="font-size:32px;font-weight:900;letter-spacing:-1px;line-height:1;">RESULTS</div>
+      <div style="font-size:32px;font-weight:700;letter-spacing:-1px;line-height:1;">RESULTS</div>
       <div style="font-size:11px;font-weight:600;opacity:0.55;margin-top:4px;text-transform:uppercase;letter-spacing:2px;">AY 2026-27</div>
     </div>
     <div class="banner-right">
@@ -525,21 +525,16 @@ function openBatch(batch){
   showScreen("students");
   const el=document.getElementById("studentListEl");
   el.innerHTML='<div class="section-label" style="margin-top:16px">STUDENTS</div>';
-  (STUDENTS[batch]||[]).forEach(name=>{
+  (STUDENTS[batch]||[]).forEach((name,idx)=>{
     const sts=studentTests(batch,name);
     const latest=sts[0];
-    let scoreFrag="", latestLabel="No results yet";
-    if(latest){
-      const s=latest.batches[batch].scores[name];
-      const mx=latest.batches[batch].maxMarks.Total;
-      const p=pct(s.Total,mx);
-      scoreFrag=`<div class="st-score"><div class="st-score-num" style="color:${scoreColor(p)}">${s.Total}</div><div class="st-score-denom">/${mx}</div>${s.Rank?`<div class="st-score-rank">Rank #${s.Rank}</div>`:""}</div>`;
-      latestLabel=latest.name;
-    }
+    const latestLabel=latest?latest.name:"No results yet";
+    const batchRank=idx+1;
+    const rankFrag=`<div class="st-score"><div class="st-score-num" style="color:#94a3b8">#${batchRank}</div><div class="st-score-rank">Batch Rank</div></div>`;
     const item=document.createElement("div");
     item.className="student-item";
     item.onclick=()=>openStudent(name);
-    item.innerHTML=`<div class="st-avatar" style="background:${avatarColor(name)}">${initials(name)}</div><div class="st-info"><div class="st-name">${name}</div><div class="st-latest">${latestLabel}</div></div>${scoreFrag||'<div class="st-score"><div style="font-size:12px;color:#9ca3af">—</div></div>'}`;
+    item.innerHTML=`<div class="st-avatar" style="background:${avatarColor(name)}">${initials(name)}</div><div class="st-info"><div class="st-name">${name}</div><div class="st-latest">${latestLabel}</div></div>${rankFrag}`;
     el.appendChild(item);
   });
 }
@@ -552,13 +547,9 @@ function openStudent(name){
   showScreen("results");
   const content=document.getElementById("resultsContent");
   content.innerHTML="";
-  const bestRank=tests.length?Math.min(...tests.map(t=>t.batches[batch].scores[name].Rank||9999)):null;
-  const avgPct=tests.length?tests.reduce((s,t)=>{const sc=t.batches[batch].scores[name];const mx=t.batches[batch].maxMarks.Total;return s+Math.max(0,sc.Total)/mx;},0)/tests.length:null;
-  const testsPresent=tests.length;
-  const testsTotal=TESTS.filter(t=>t.batches[batch]).length;
   const hero=document.createElement("div");
   hero.className="student-hero";
-  hero.innerHTML=`<div class="hero-top"><div class="hero-avatar" style="background:${avatarColor(name)}">${initials(name)}</div><div class="hero-detail"><div class="hero-name">${name}</div><span class="hero-batch-pill" style="background:${color}">${batch}</span></div></div><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-num">${testsPresent}/${testsTotal}</div><div class="hero-stat-label">Attended</div></div>${bestRank&&bestRank<9999?`<div class="hero-stat"><div class="hero-stat-num">#${bestRank}</div><div class="hero-stat-label">Best Rank</div></div>`:""}${avgPct!==null?`<div class="hero-stat"><div class="hero-stat-num" style="color:${scoreColor(avgPct)}">${Math.round(avgPct*100)}%</div><div class="hero-stat-label">Avg Score</div></div>`:""}</div>`;
+  hero.innerHTML=`<div class="hero-top"><div class="hero-avatar" style="background:${avatarColor(name)}">${initials(name)}</div><div class="hero-detail"><div class="hero-name">${name}</div><span class="hero-batch-pill" style="background:${color}">${batch}</span></div></div><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-num" id="heroPresent" style="color:#16a34a">—</div><div class="hero-stat-label">Present</div></div><div class="hero-stat"><div class="hero-stat-num" id="heroAbsent" style="color:#dc2626">—</div><div class="hero-stat-label">Absent</div></div><div class="hero-stat"><div class="hero-stat-num" id="heroPct">—</div><div class="hero-stat-label">Attendance</div></div></div>`;
   content.appendChild(hero);
   TESTS.forEach(test=>{
     const bd=test.batches[batch];
@@ -614,6 +605,13 @@ function renderAttendance(card, data) {
   const marked  = present + absent;
   const pct     = marked ? Math.round(present / marked * 100) : null;
   const pctColor = pct === null ? '#64748b' : pct >= 85 ? '#16a34a' : pct >= 75 ? '#d97706' : '#dc2626';
+  // Update hero stat pills
+  const hp = document.getElementById('heroPresent');
+  const ha = document.getElementById('heroAbsent');
+  const hpct = document.getElementById('heroPct');
+  if (hp) hp.textContent = present;
+  if (ha) ha.textContent = absent;
+  if (hpct) { hpct.textContent = pct !== null ? pct + '%' : '—'; hpct.style.color = pctColor; }
   const dots = data.dates.map((d, i) => {
     const r = data.records[i] || '';
     const cls = r === 'P' ? 'att-dot-p' : r === 'A' ? 'att-dot-a' : 'att-dot-empty';
