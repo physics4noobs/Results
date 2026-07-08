@@ -36,7 +36,7 @@
     .date-banner {
       margin: 16px 16px 0;
       background: linear-gradient(135deg, #134E4A 0%, #0F766E 100%);
-      border-radius: 20px; padding: 20px 22px; color: white;
+      border-radius: 20px; padding: 13px 20px; color: white;
       display: flex; align-items: center; justify-content: space-between;
       box-shadow: 0 8px 24px rgba(15,32,68,0.35);
       overflow: hidden; position: relative;
@@ -45,12 +45,10 @@
     .date-banner::after  { content: ''; position: absolute; bottom: -40px; right: 60px; width: 100px; height: 100px; background: rgba(255,255,255,0.04); border-radius: 50%; }
     .banner-left  { position: relative; z-index: 1; }
     .banner-right { text-align: right; position: relative; z-index: 1; }
-    .banner-day   { font-size: 56px; font-weight: 900; line-height: 1; letter-spacing: -3px; }
-    .banner-month { font-size: 16px; font-weight: 600; opacity: 0.85; margin-top: 4px; }
-    .banner-weekday { font-size: 11px; font-weight: 700; opacity: 0.45; margin-top: 4px; text-transform: uppercase; letter-spacing: 2px; }
-    .banner-progress { font-size: 42px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
-    .banner-progress span { font-size: 20px; font-weight: 600; opacity: 0.6; }
-    .banner-prog-label { font-size: 11px; opacity: 0.55; margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+    .banner-progress { font-size: 20px; font-weight: 800; line-height: 1; letter-spacing: -0.5px; }
+    .banner-progress span:first-child { font-size: 20px; font-weight: 900; opacity: 1; }
+    .banner-progress span:last-child  { font-size: 14px; font-weight: 600; opacity: 0.75; }
+    .banner-prog-label { font-size: 10px; opacity: 0.55; margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
 
     .search-wrap { margin: 16px 16px 0; position: relative; }
     .search-wrap input {
@@ -226,13 +224,12 @@
 <div id="home-screen">
   <div class="date-banner">
     <div class="banner-left">
-      <div class="banner-day">3</div>
-      <div class="banner-month">Tests Conducted</div>
-      <div class="banner-weekday">AY 2026-27</div>
+      <div style="font-size:32px;font-weight:900;letter-spacing:-1px;line-height:1;">RESULTS</div>
+      <div style="font-size:11px;font-weight:600;opacity:0.55;margin-top:4px;text-transform:uppercase;letter-spacing:2px;">AY 2026-27</div>
     </div>
     <div class="banner-right">
-      <div class="banner-progress"><span>113</span><span> students</span></div>
-      <div class="banner-prog-label">across 6 batches</div>
+      <div class="banner-progress"><span>3</span><span> Tests</span></div>
+      <div class="banner-prog-label">113 students · 6 batches</div>
     </div>
   </div>
 
@@ -286,8 +283,8 @@
 const ATTENDANCE_URL = 'https://script.google.com/macros/s/AKfycbxnF5JmMEb_fx9turFYNiRJNgN2mptZnR6bhRMQxriR5n9E8za5xbsdXK6ppxfVsXai/exec';
 
 const STUDENTS = {
-  "XI-Adv A": ["Aarya Sachin Kulkarni","Adhrit Das","Aditya Pandey","Aksh Raturi","Akshaj Chakrapani","Angira Roy","Anushree Srenivasan","Athul Mathew","Ayaan Anugrah Lall","Dhruv Naga Aditya Tiruveedula","Diya Aju","Gagan M.N","Georgy Oommen George","Ishaan Sibin","Kanav Gupta","Kanisshka B","Krisha Riteshkumar Panchal","Lakshya Kankar","Lipika Panda","Manmay Panda","Neelakantan Kaplingat","Preya Mankad","Priyasha Rath","Rajveer Saxena","Rishabh Mallya H","Ronak Rasindh","Saksham Ranjan","Samvit Gupta","Saniddhya Das","Shrey Dusad","Sreehari Ravi Prasad","T.R.Easwar","Tanushkaa M","Veda Srishti Dinnepu"],
-  "XI-Adv B": ["Aadhya Ganesh","Aakriti","Aditya Anand","Adityaram Arunaachalam","Ahana Ghosh Roy","Akshay Sathish","Angel Mary Asish","Angela Bino","Ankith Nambiar","Ashish Kumar Barik","Avi Mishra","Chetan Devireddy","Dhruv Sai Paapisetty","Jitesh Karthik","Kabir Yadav","Lakshya Malik","Lalitha Samanvita Matte","Mohammad Aahil Khan","Naissha Saini","Neel Joshi","Parameswaran Kaplingat","Piraisoodan","Rakshitha","Rishita Baruah","Rishitha Reddy Duddukunta","Rithika Reddy Enaganti","Sharada Koona Srinivasan","Shashwat Chandra","Shourya Ghosh","Shubh Choudhary"],
+  "XI-Adv A": ["Lakshya Kankar","Ishaan Sibin","Ronak Rasindh","Ayaan Anugrah Lall","Saniddhya Das","Krisha Riteshkumar Panchal","Sreehari Ravi Prasad","Kanav Gupta","Georgy Oommen George","Athul Mathew","Adhrit Das","T.R.Easwar","Aksh Raturi","Diya Aju","Samvit Gupta","Shrey Dusad","Saksham Ranjan","Gagan M.N","Manmay Panda","Priyasha Rath","Aarya Sachin Kulkarni","Kanisshka B","Rajveer Saxena","Dhruv Naga Aditya Tiruveedula","Rishabh Mallya H","Aditya Pandey","Angira Roy","Preya Mankad","Lipika Panda","Tanushkaa M","Neelakantan Kaplingat","Anushree Srenivasan","Akshaj Chakrapani","Veda Srishti Dinnepu"],
+  "XI-Adv B": ["Angel Mary Asish","Adityaram Arunaachalam","Angela Bino","Jitesh Karthik","Akshay Sathish","Avi Mishra","Rishita Baruah","Dhruv Sai Paapisetty","Lakshya Malik","Parameswaran Kaplingat","Aadhya Ganesh","Sharada Koona Srinivasan","Neel Joshi","Aditya Anand","Shubh Choudhary","Aakriti","Ashish Kumar Barik","Shashwat Chandra","Chetan Devireddy","Kabir Yadav","Rakshitha","Mohammad Aahil Khan","Ahana Ghosh Roy","Lalitha Samanvita Matte","Rithika Reddy Enaganti","Shourya Ghosh","Naissha Saini","Rishitha Reddy Duddukunta","Ankith Nambiar","Piraisoodan"],
   "XI-NEET": ["Aaryan Darsi","Adit Raj","Advika Jha","Akaisha Lilani","Anahita Mathur","Anirwin Asokane","Anushka Parasher","Arjun Nambiar","Arnav Chaudhary","Arshi Khongal","Bani Samir Mewada","Geena Krish","Harvi Prashant Kumar Kasodariya","Joshua George Mathew","K S Vishnupriya","Krinal Krish K","Medhashree Mohan","Nikhila Shreyasi Adkasthala","P Prarthna","Prarthana N","Siya Sachin Kulkarni","Tadapaneni Khyathi Vaishnavi","Vaibhav Singh","Veda Goberu","Venisha Manjunath"],
   "Grade X": ["D Manya","Dheer P","Harvy Patel","Mainak Pal","Pranay Kumar","Tattv Kaul"],
   "Grade IX": ["Abhilasha Patranabis","Advik","Akshay Bomman","Anna Maria Stephen","Ayaan Chaturvedi","Ayan Majumdar","Bathuri Saadhvi","Chandana Naga Durga Tiruveedula","Harshit Dey","Javvadi Gopi Saranya","Korlapati Sri Samarth","Niveditha M","Rahul","Ryan Das","Shubhangi Hazarika","Tharunika V G","Thrinesh Bharadwaj","Vippagunta Arnav"],
