@@ -675,6 +675,17 @@ function openStudent(name){
     .catch(() => { attCard.querySelector('.att-loading').textContent = 'Could not load attendance.'; });
 }
 
+function formatDateLabel(d) {
+  // Sheet header can be "09-Jul-2026" (normal case) or a stringified Date
+  // object like "Thu Jul 09 2026 00:00:00 GMT+0530 ..." (when Sheets
+  // auto-converted the header cell to a date). Handle both, output "9Jul".
+  const m = d.match(/^(\d{1,2})-([A-Za-z]{3})-\d{4}$/);
+  if (m) return `${parseInt(m[1], 10)}${m[2]}`;
+  const parsed = new Date(d);
+  if (!isNaN(parsed)) return `${parsed.getDate()}${parsed.toLocaleString('en-GB', { month: 'short' })}`;
+  return d.slice(0, 6);
+}
+
 function renderAttendance(card, data) {
   const body = card.querySelector('.att-body');
   if (data.error || !data.dates || data.dates.length === 0) {
@@ -697,7 +708,7 @@ function renderAttendance(card, data) {
     const r = data.records[i] || '';
     const cls = r === 'P' ? 'att-dot-p' : r === 'A' ? 'att-dot-a' : 'att-dot-empty';
     const label = r || '—';
-    const shortDate = d.replace(/(\d+)-([A-Za-z]+)-\d+/, '$1 $2').slice(0, 6);
+    const shortDate = formatDateLabel(d);
     return `<div class="att-dot-wrap"><div class="att-dot ${cls}">${label}</div><div class="att-dot-date">${shortDate}</div></div>`;
   }).join('');
   body.innerHTML = `<div class="att-title">Attendance</div>
