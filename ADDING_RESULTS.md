@@ -152,6 +152,7 @@ Attendance is pulled **live** from Google Sheets via Apps Script when a student 
 
 | id | Name | Date | Batches | Max Marks |
 |----|------|------|---------|-----------|
+| `jee-main-jul-2026` | JEE MAIN Internal Test 2 | 19 Jul 2026 | XI-Adv A, XI-Adv B | /300 (100+100+100) |
 | `adv-jul-2026` | DPS Advanced Test | 5 Jul 2026 | XI-Adv A, XI-Adv B | /180 (60+60+60) |
 | `jee-main-jun-2026` | JEE MAIN Internal Test 1 | 28 Jun 2026 | XI-Adv A, XI-Adv B | /300 (100+100+100) |
 | `jee-mains-nurture-jun-2026` | JEE Mains Internal Test 2 | 28 Jun 2026 | XI-Mains | /180 (60+60+60) |
