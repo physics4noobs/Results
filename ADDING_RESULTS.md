@@ -122,7 +122,7 @@ GitHub Pages updates in ~1 minute. Live at: **https://physics4noobs.github.io/Re
 | Batch | Count | Order |
 |-------|-------|-------|
 | XI-Adv A | 34 | Merit order (latest = IIT Nurture Major Test 1, 30 Aug 2026); absent students at end |
-| XI-Adv B | 30 | Merit order (latest = IIT Nurture Major Test 1, 30 Aug 2026); absent students at end |
+| XI-Adv B | 29 | Merit order (latest = IIT Nurture Major Test 1, 30 Aug 2026); absent students at end |
 | XI-Mains | 25 | Merit order (latest = JEE Mains IT-02, 28 Jun 2026); absent students at end |
 | XI-NEET | 25 | Merit order (latest = NEET Internal Test 3, 30 Aug 2026); absent students at end |
 | Grade X | 6 | Alphabetical |

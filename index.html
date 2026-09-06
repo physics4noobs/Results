@@ -283,8 +283,8 @@
 const ATTENDANCE_URL = 'https://script.google.com/macros/s/AKfycbxnF5JmMEb_fx9turFYNiRJNgN2mptZnR6bhRMQxriR5n9E8za5xbsdXK6ppxfVsXai/exec';
 
 const STUDENTS = {
-  "XI-Adv A": ["Lakshya Kankar","Samvit Gupta","Georgy Oommen George","Rajveer Saxena","Ronak Rasindh","Ishaan Sibin","T.R.Easwar","Veda Srishti Dinnepu","Akshaj Chakrapani","Sreehari Ravi Prasad","Shrey Dusad","Krisha Riteshkumar Panchal","Manmay Panda","Priyasha Rath","Ayaan Anugrah Lall","Athul Mathew","Lipika Panda","Adhrit Das","Saniddhya Das","Diya Aju","Tanushkaa M","Aarya Sachin Kulkarni","Aditya Pandey","Rishabh Mallya H","Gagan M.N","Kanisshka B","Anushree Srenivasan","Dhruv Naga Aditya Tiruveedula","Preya Mankad","Aksh Raturi","Kanav Gupta","Neelakantan Kaplingat","Saksham Ranjan","Angira Roy"],
-  "XI-Adv B": ["Aditya Anand","Dhruv Sai Paapisetty","Jitesh Karthik","Neel Joshi","Ashish Kumar Barik","Parameswaran Kaplingat","Shubh Choudhary","Shashwat Chandra","Angel Mary Asish","Adityaram Arunaachalam","Chetan Devireddy","Rishitha Reddy Duddukunta","Angela Bino","Aakriti","Naissha Saini","Aadhya Ganesh","Sharada Koona Srinivasan","Rakshitha","Rishita Baruah","Kabir Yadav","Lakshya Malik","Ahana Ghosh Roy","Avi Mishra","Rithika Reddy Enaganti","Shourya Ghosh","Lalitha Samanvita Matte","Akshay Sathish","Mohammad Aahil Khan","Ankith Nambiar","Piraisoodan"],
+  "XI-Adv A": ["Lakshya Kankar","Samvit Gupta","Georgy Oommen George","Rajveer Saxena","Ronak Rasindh","Ishaan Sibin","T.R.Easwar","Veda Srishti Dinnepu","Akshaj Chakrapani","Sreehari Ravi Prasad","Shrey Dusad","Krisha Riteshkumar Panchal","Manmay Panda","Aditya Anand","Priyasha Rath","Ayaan Anugrah Lall","Athul Mathew","Lipika Panda","Adhrit Das","Saniddhya Das","Diya Aju","Tanushkaa M","Aarya Sachin Kulkarni","Aditya Pandey","Rishabh Mallya H","Gagan M.N","Kanisshka B","Anushree Srenivasan","Dhruv Naga Aditya Tiruveedula","Preya Mankad","Aksh Raturi","Kanav Gupta","Neelakantan Kaplingat","Saksham Ranjan"],
+  "XI-Adv B": ["Dhruv Sai Paapisetty","Jitesh Karthik","Neel Joshi","Ashish Kumar Barik","Parameswaran Kaplingat","Shubh Choudhary","Shashwat Chandra","Angel Mary Asish","Adityaram Arunaachalam","Chetan Devireddy","Rishitha Reddy Duddukunta","Angela Bino","Aakriti","Naissha Saini","Aadhya Ganesh","Sharada Koona Srinivasan","Rakshitha","Rishita Baruah","Kabir Yadav","Lakshya Malik","Ahana Ghosh Roy","Avi Mishra","Rithika Reddy Enaganti","Shourya Ghosh","Lalitha Samanvita Matte","Akshay Sathish","Mohammad Aahil Khan","Ankith Nambiar","Piraisoodan"],
   "XI-NEET": ["Nikhila Shreyasi Adkasthala","Anushka Parasher","Vaibhav Singh","Anahita Mathur","Adit Raj","Siya Sachin Kulkarni","Medhashree Mohan","Veda Goberu","Harvi Prashant Kumar Kasodariya","Geena Krish","Bani Samir Mewada","Anirwin Asokane","Arjun Nambiar","K S Vishnupriya","P Prarthna","Advika Jha","Tadapaneni Khyathi Vaishnavi","Aaryan Darsi","Venisha Manjunath","Joshua George Mathew","Arshi Khongal","Akaisha Lilani","Prarthana N","Krinal Krish K","Arnav Chaudhary"],
   "Grade X": ["D Manya","Dheer P","Harvy Patel","Mainak Pal","Pranay Kumar","Tattv Kaul"],
   "Grade IX": ["Abhilasha Patranabis","Advik","Akshay Bomman","Anna Maria Stephen","Ayaan Chaturvedi","Ayan Majumdar","Bathuri Saadhvi","Chandana Naga Durga Tiruveedula","Harshit Dey","Javvadi Gopi Saranya","Korlapati Sri Samarth","Niveditha M","Rahul","Ryan Das","Shubhangi Hazarika","Tharunika V G","Thrinesh Bharadwaj","Vippagunta Arnav"],
@@ -334,6 +334,7 @@ const TESTS = [
         "Shrey Dusad":{Physics:56,Chemistry:53,Math:25,Total:134,Rank:140},
         "Krisha Riteshkumar Panchal":{Physics:55,Chemistry:53,Math:19,Total:127,Rank:150},
         "Manmay Panda":{Physics:40,Chemistry:61,Math:22,Total:123,Rank:157},
+        "Aditya Anand":{Physics:61,Chemistry:33,Math:27,Total:121,Rank:159},
         "Priyasha Rath":{Physics:50,Chemistry:42,Math:27,Total:119,Rank:163},
         "Ayaan Anugrah Lall":{Physics:54,Chemistry:30,Math:34,Total:118,Rank:165},
         "Athul Mathew":{Physics:47,Chemistry:42,Math:28,Total:117,Rank:167},
@@ -355,7 +356,6 @@ const TESTS = [
         "Neelakantan Kaplingat":{Physics:36,Chemistry:33,Math:15,Total:84,Rank:229}
       } },
       "XI-Adv B":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
-        "Aditya Anand":{Physics:61,Chemistry:33,Math:27,Total:121,Rank:159},
         "Dhruv Sai Paapisetty":{Physics:43,Chemistry:44,Math:17,Total:104,Rank:190},
         "Jitesh Karthik":{Physics:47,Chemistry:43,Math:12,Total:102,Rank:193},
         "Neel Joshi":{Physics:39,Chemistry:32,Math:29,Total:100,Rank:195},
@@ -409,6 +409,7 @@ const TESTS = [
         "Gagan M.N":{Physics:30,Chemistry:19,Math:67,Total:116,Rank:165},
         "Adhrit Das":{Physics:38,Chemistry:41,Math:37,Total:116,Rank:168},
         "Tanushkaa M":{Physics:25,Chemistry:40,Math:47,Total:112,Rank:173},
+        "Aditya Anand":{Physics:46,Chemistry:20,Math:44,Total:110,Rank:177},
         "Kanav Gupta":{Physics:22,Chemistry:40,Math:47,Total:109,Rank:178},
         "Manmay Panda":{Physics:35,Chemistry:34,Math:33,Total:102,Rank:190},
         "Preya Mankad":{Physics:22,Chemistry:27,Math:52,Total:101,Rank:192},
@@ -424,7 +425,6 @@ const TESTS = [
         "Akshay Sathish":{Physics:31,Chemistry:40,Math:50,Total:121,Rank:157},
         "Neel Joshi":{Physics:37,Chemistry:1,Math:81,Total:119,Rank:161},
         "Angel Mary Asish":{Physics:15,Chemistry:32,Math:69,Total:116,Rank:164},
-        "Aditya Anand":{Physics:46,Chemistry:20,Math:44,Total:110,Rank:177},
         "Rishitha Reddy Duddukunta":{Physics:29,Chemistry:11,Math:46,Total:86,Rank:211},
         "Shubh Choudhary":{Physics:11,Chemistry:34,Math:37,Total:82,Rank:220},
         "Dhruv Sai Paapisetty":{Physics:14,Chemistry:23,Math:42,Total:79,Rank:223},
@@ -557,14 +557,14 @@ const TESTS = [
         "Dhruv Naga Aditya Tiruveedula":{Chemistry:12,Math:4,Physics:2,Total:18,Rank:274},
         "Rishabh Mallya H":{Chemistry:11,Math:10,Physics:13,Total:34,Rank:159},
         "Aditya Pandey":{Chemistry:9,Math:4,Physics:25,Total:38,Rank:136},
-        "Angira Roy":{Chemistry:2,Math:5,Physics:7,Total:14,Rank:304},
         "Preya Mankad":{Chemistry:11,Math:2,Physics:7,Total:20,Rank:254},
         "Lipika Panda":{Chemistry:14,Math:9,Physics:4,Total:27,Rank:200},
         "Tanushkaa M":{Chemistry:4,Math:13,Physics:-2,Total:15,Rank:298},
         "Neelakantan Kaplingat":{Chemistry:3,Math:0,Physics:-1,Total:2,Rank:362},
         "Anushree Srenivasan":{Chemistry:-2,Math:10,Physics:6,Total:14,Rank:303},
         "Akshaj Chakrapani":{Chemistry:2,Math:8,Physics:11,Total:21,Rank:242},
-        "Veda Srishti Dinnepu":{Chemistry:20,Math:12,Physics:12,Total:44,Rank:95}
+        "Veda Srishti Dinnepu":{Chemistry:20,Math:12,Physics:12,Total:44,Rank:95},
+        "Aditya Anand":{Chemistry:1,Math:8,Physics:8,Total:17,Rank:282}
       } },
       "XI-Adv B":{ maxMarks:{Chemistry:60,Math:60,Physics:60,Total:180}, scores:{
         "Adityaram Arunaachalam":{Chemistry:12,Math:2,Physics:7,Total:21,Rank:247},
@@ -579,7 +579,6 @@ const TESTS = [
         "Aadhya Ganesh":{Chemistry:13,Math:0,Physics:9,Total:22,Rank:239},
         "Sharada Koona Srinivasan":{Chemistry:17,Math:5,Physics:3,Total:25,Rank:220},
         "Neel Joshi":{Chemistry:2,Math:-1,Physics:13,Total:14,Rank:308},
-        "Aditya Anand":{Chemistry:1,Math:8,Physics:8,Total:17,Rank:282},
         "Aakriti":{Chemistry:4,Math:9,Physics:6,Total:19,Rank:259},
         "Ashish Kumar Barik":{Chemistry:1,Math:0,Physics:15,Total:16,Rank:295},
         "Shashwat Chandra":{Chemistry:13,Math:-3,Physics:0,Total:10,Rank:334},
@@ -622,13 +621,13 @@ const TESTS = [
         "Dhruv Naga Aditya Tiruveedula":{Physics:47,Chemistry:39,Math:34,Total:120,Rank:199},
         "Rishabh Mallya H":{Physics:30,Chemistry:43,Math:29,Total:102,Rank:240},
         "Aditya Pandey":{Physics:41,Chemistry:41,Math:13,Total:95,Rank:253},
-        "Angira Roy":{Physics:39,Chemistry:60,Math:20,Total:119,Rank:201},
         "Preya Mankad":{Physics:34,Chemistry:44,Math:34,Total:112,Rank:217},
         "Lipika Panda":{Physics:23,Chemistry:52,Math:28,Total:103,Rank:238},
         "Tanushkaa M":{Physics:29,Chemistry:46,Math:39,Total:114,Rank:211},
         "Neelakantan Kaplingat":{Physics:64,Chemistry:36,Math:25,Total:125,Rank:184},
         "Anushree Srenivasan":{Physics:28,Chemistry:40,Math:42,Total:110,Rank:222},
-        "Akshaj Chakrapani":{Physics:58,Chemistry:24,Math:20,Total:102,Rank:242}
+        "Akshaj Chakrapani":{Physics:58,Chemistry:24,Math:20,Total:102,Rank:242},
+        "Aditya Anand":{Physics:27,Chemistry:19,Math:38,Total:84,Rank:276}
       } },
       "XI-Adv B":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
         "Adityaram Arunaachalam":{Physics:57,Chemistry:21,Math:21,Total:99,Rank:244},
@@ -644,7 +643,6 @@ const TESTS = [
         "Aadhya Ganesh":{Physics:14,Chemistry:38,Math:32,Total:84,Rank:277},
         "Sharada Koona Srinivasan":{Physics:40,Chemistry:22,Math:17,Total:79,Rank:295},
         "Neel Joshi":{Physics:44,Chemistry:29,Math:18,Total:91,Rank:262},
-        "Aditya Anand":{Physics:27,Chemistry:19,Math:38,Total:84,Rank:276},
         "Shubh Choudhary":{Physics:32,Chemistry:52,Math:12,Total:96,Rank:252},
         "Aakriti":{Physics:19,Chemistry:38,Math:17,Total:74,Rank:313},
         "Ashish Kumar Barik":{Physics:16,Chemistry:41,Math:15,Total:72,Rank:318},
@@ -693,13 +691,13 @@ const TESTS = [
         "Dhruv Naga Aditya Tiruveedula":{Physics:86,Chemistry:68,Math:48,Total:202,Rank:45},
         "Rishabh Mallya H":{Physics:78,Chemistry:46,Math:26,Total:150,Rank:111},
         "Aditya Pandey":{Physics:84,Chemistry:44,Math:42,Total:170,Rank:79},
-        "Angira Roy":{Physics:60,Chemistry:46,Math:30,Total:136,Rank:132},
         "Preya Mankad":{Physics:51,Chemistry:30,Math:31,Total:112,Rank:177},
         "Lipika Panda":{Physics:62,Chemistry:28,Math:44,Total:134,Rank:137},
         "Neelakantan Kaplingat":{Physics:58,Chemistry:49,Math:23,Total:130,Rank:146},
         "Anushree Srenivasan":{Physics:67,Chemistry:48,Math:20,Total:135,Rank:135},
         "Akshaj Chakrapani":{Physics:81,Chemistry:41,Math:32,Total:154,Rank:104},
-        "Veda Srishti Dinnepu":{Physics:77,Chemistry:35,Math:24,Total:136,Rank:132}
+        "Veda Srishti Dinnepu":{Physics:77,Chemistry:35,Math:24,Total:136,Rank:132},
+        "Aditya Anand":{Physics:49,Chemistry:39,Math:38,Total:126,Rank:153}
       } },
       "XI-Adv B":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
         "Adityaram Arunaachalam":{Physics:66,Chemistry:33,Math:28,Total:127,Rank:152},
@@ -713,7 +711,6 @@ const TESTS = [
         "Aadhya Ganesh":{Physics:56,Chemistry:31,Math:26,Total:113,Rank:174},
         "Sharada Koona Srinivasan":{Physics:14,Chemistry:17,Math:21,Total:52,Rank:224},
         "Neel Joshi":{Physics:67,Chemistry:64,Math:25,Total:156,Rank:101},
-        "Aditya Anand":{Physics:49,Chemistry:39,Math:38,Total:126,Rank:153},
         "Aakriti":{Physics:59,Chemistry:32,Math:33,Total:124,Rank:157},
         "Ashish Kumar Barik":{Physics:44,Chemistry:28,Math:4,Total:76,Rank:212},
         "Shashwat Chandra":{Physics:71,Chemistry:54,Math:39,Total:164,Rank:89},
