@@ -121,10 +121,10 @@ GitHub Pages updates in ~1 minute. Live at: **https://physics4noobs.github.io/Re
 
 | Batch | Count | Order |
 |-------|-------|-------|
-| XI-Adv A | 34 | Merit order (latest = DPS Advanced Test, 5 Jul 2026) |
-| XI-Adv B | 30 | Merit order (latest = DPS Advanced Test, 5 Jul 2026) |
+| XI-Adv A | 34 | Merit order (latest = IIT Nurture Major Test 1, 30 Aug 2026); absent students at end |
+| XI-Adv B | 30 | Merit order (latest = IIT Nurture Major Test 1, 30 Aug 2026); absent students at end |
 | XI-Mains | 25 | Merit order (latest = JEE Mains IT-02, 28 Jun 2026); absent students at end |
-| XI-NEET | 25 | Merit order (latest = NEET Test 2, 28 Jun 2026); absent students at end |
+| XI-NEET | 25 | Merit order (latest = NEET Internal Test 3, 30 Aug 2026); absent students at end |
 | Grade X | 6 | Alphabetical |
 | Grade IX | 18 | Alphabetical |
 
@@ -152,6 +152,8 @@ Attendance is pulled **live** from Google Sheets via Apps Script when a student 
 
 | id | Name | Date | Batches | Max Marks |
 |----|------|------|---------|-----------|
+| `neet-aug-2026` | NEET Internal Test 3 | 30 Aug 2026 | XI-NEET | /720 (180×4) |
+| `adv-aug-2026` | IIT Nurture Major Test 1 | 30 Aug 2026 | XI-Adv A, XI-Adv B | /300 (100+100+100) |
 | `jee-main-jul-2026` | JEE MAIN Internal Test 2 | 19 Jul 2026 | XI-Adv A, XI-Adv B | /300 (100+100+100) |
 | `adv-jul-2026` | DPS Advanced Test | 5 Jul 2026 | XI-Adv A, XI-Adv B | /180 (60+60+60) |
 | `jee-main-jun-2026` | JEE MAIN Internal Test 1 | 28 Jun 2026 | XI-Adv A, XI-Adv B | /300 (100+100+100) |

@@ -228,7 +228,7 @@
       <div style="font-size:11px;font-weight:600;opacity:0.55;margin-top:4px;text-transform:uppercase;letter-spacing:2px;">AY 2026-27</div>
     </div>
     <div class="banner-right">
-      <div class="banner-progress"><span>7</span><span> Tests</span></div>
+      <div class="banner-progress"><span>9</span><span> Tests</span></div>
       <div class="banner-prog-label">113 students · 6 batches</div>
     </div>
   </div>
@@ -283,15 +283,107 @@
 const ATTENDANCE_URL = 'https://script.google.com/macros/s/AKfycbxnF5JmMEb_fx9turFYNiRJNgN2mptZnR6bhRMQxriR5n9E8za5xbsdXK6ppxfVsXai/exec';
 
 const STUDENTS = {
-  "XI-Adv A": ["Lakshya Kankar","Ishaan Sibin","Ronak Rasindh","Ayaan Anugrah Lall","Saniddhya Das","Krisha Riteshkumar Panchal","Sreehari Ravi Prasad","Kanav Gupta","Georgy Oommen George","Athul Mathew","Adhrit Das","T.R.Easwar","Aksh Raturi","Diya Aju","Samvit Gupta","Shrey Dusad","Saksham Ranjan","Gagan M.N","Manmay Panda","Priyasha Rath","Aarya Sachin Kulkarni","Kanisshka B","Rajveer Saxena","Dhruv Naga Aditya Tiruveedula","Rishabh Mallya H","Aditya Pandey","Angira Roy","Preya Mankad","Lipika Panda","Tanushkaa M","Neelakantan Kaplingat","Anushree Srenivasan","Akshaj Chakrapani","Veda Srishti Dinnepu"],
-  "XI-Adv B": ["Angel Mary Asish","Adityaram Arunaachalam","Angela Bino","Jitesh Karthik","Akshay Sathish","Avi Mishra","Rishita Baruah","Dhruv Sai Paapisetty","Lakshya Malik","Parameswaran Kaplingat","Aadhya Ganesh","Sharada Koona Srinivasan","Neel Joshi","Aditya Anand","Shubh Choudhary","Aakriti","Ashish Kumar Barik","Shashwat Chandra","Chetan Devireddy","Kabir Yadav","Rakshitha","Mohammad Aahil Khan","Ahana Ghosh Roy","Lalitha Samanvita Matte","Rithika Reddy Enaganti","Shourya Ghosh","Naissha Saini","Rishitha Reddy Duddukunta","Ankith Nambiar","Piraisoodan"],
-  "XI-NEET": ["Anushka Parasher","Harvi Prashant Kumar Kasodariya","Nikhila Shreyasi Adkasthala","Adit Raj","Arshi Khongal","Anahita Mathur","Veda Goberu","Medhashree Mohan","Joshua George Mathew","K S Vishnupriya","Aaryan Darsi","P Prarthna","Akaisha Lilani","Anirwin Asokane","Prarthana N","Geena Krish","Krinal Krish K","Bani Samir Mewada","Advika Jha","Arjun Nambiar","Siya Sachin Kulkarni","Venisha Manjunath","Tadapaneni Khyathi Vaishnavi","Arnav Chaudhary","Vaibhav Singh"],
+  "XI-Adv A": ["Lakshya Kankar","Samvit Gupta","Georgy Oommen George","Rajveer Saxena","Ronak Rasindh","Ishaan Sibin","T.R.Easwar","Veda Srishti Dinnepu","Akshaj Chakrapani","Sreehari Ravi Prasad","Shrey Dusad","Krisha Riteshkumar Panchal","Manmay Panda","Priyasha Rath","Ayaan Anugrah Lall","Athul Mathew","Lipika Panda","Adhrit Das","Saniddhya Das","Diya Aju","Tanushkaa M","Aarya Sachin Kulkarni","Aditya Pandey","Rishabh Mallya H","Gagan M.N","Kanisshka B","Anushree Srenivasan","Dhruv Naga Aditya Tiruveedula","Preya Mankad","Aksh Raturi","Kanav Gupta","Neelakantan Kaplingat","Saksham Ranjan","Angira Roy"],
+  "XI-Adv B": ["Aditya Anand","Dhruv Sai Paapisetty","Jitesh Karthik","Neel Joshi","Ashish Kumar Barik","Parameswaran Kaplingat","Shubh Choudhary","Shashwat Chandra","Angel Mary Asish","Adityaram Arunaachalam","Chetan Devireddy","Rishitha Reddy Duddukunta","Angela Bino","Aakriti","Naissha Saini","Aadhya Ganesh","Sharada Koona Srinivasan","Rakshitha","Rishita Baruah","Kabir Yadav","Lakshya Malik","Ahana Ghosh Roy","Avi Mishra","Rithika Reddy Enaganti","Shourya Ghosh","Lalitha Samanvita Matte","Akshay Sathish","Mohammad Aahil Khan","Ankith Nambiar","Piraisoodan"],
+  "XI-NEET": ["Nikhila Shreyasi Adkasthala","Anushka Parasher","Vaibhav Singh","Anahita Mathur","Adit Raj","Siya Sachin Kulkarni","Medhashree Mohan","Veda Goberu","Harvi Prashant Kumar Kasodariya","Geena Krish","Bani Samir Mewada","Anirwin Asokane","Arjun Nambiar","K S Vishnupriya","P Prarthna","Advika Jha","Tadapaneni Khyathi Vaishnavi","Aaryan Darsi","Venisha Manjunath","Joshua George Mathew","Arshi Khongal","Akaisha Lilani","Prarthana N","Krinal Krish K","Arnav Chaudhary"],
   "Grade X": ["D Manya","Dheer P","Harvy Patel","Mainak Pal","Pranay Kumar","Tattv Kaul"],
   "Grade IX": ["Abhilasha Patranabis","Advik","Akshay Bomman","Anna Maria Stephen","Ayaan Chaturvedi","Ayan Majumdar","Bathuri Saadhvi","Chandana Naga Durga Tiruveedula","Harshit Dey","Javvadi Gopi Saranya","Korlapati Sri Samarth","Niveditha M","Rahul","Ryan Das","Shubhangi Hazarika","Tharunika V G","Thrinesh Bharadwaj","Vippagunta Arnav"],
   "XI-Mains": ["Advitha Rohit","Ayanna Samal","Mayank Praful Lahorkar","S V Niharikha","Chirantani Ash","Anwesha Pai","Jishnusri Spoorthy Manjuluri","Ahan Agarwal","Narendran Jayakumar","Arshiya Karmakar","Aarav Dasgupta","Shalini T A","Ajay Madesh","Krishna Dash","Praneeth Venkat","Keshav Syamkumar","Shragvi Parauha","Louie Mathew","Jason Chacko George","Yash Gupta","Ritwik Guha","Gauransh Kar","Zoya Taj","Ishita Sharma","Anirjit Chandra"]
 };
 
 const TESTS = [
+  { id:"neet-aug-2026", name:"NEET Internal Test 3", date:"30 Aug 2026", type:"neet",
+    batches:{
+      "XI-NEET":{ maxMarks:{Physics:180,Chemistry:180,Botany:180,Zoology:180,Total:720}, scores:{
+        "Nikhila Shreyasi Adkasthala":{Physics:83,Chemistry:121,Botany:156,Zoology:135,Total:495,Rank:236},
+        "Anushka Parasher":{Physics:85,Chemistry:93,Botany:148,Zoology:141,Total:467,Rank:303},
+        "Vaibhav Singh":{Physics:80,Chemistry:49,Botany:158,Zoology:116,Total:403,Rank:510},
+        "Anahita Mathur":{Physics:46,Chemistry:56,Botany:150,Zoology:116,Total:368,Rank:667},
+        "Adit Raj":{Physics:58,Chemistry:15,Botany:152,Zoology:131,Total:356,Rank:723},
+        "Siya Sachin Kulkarni":{Physics:52,Chemistry:40,Botany:137,Zoology:110,Total:339,Rank:807},
+        "Medhashree Mohan":{Physics:61,Chemistry:25,Botany:119,Zoology:127,Total:332,Rank:850},
+        "Veda Goberu":{Physics:46,Chemistry:26,Botany:121,Zoology:137,Total:330,Rank:857},
+        "Harvi Prashant Kumar Kasodariya":{Physics:55,Chemistry:29,Botany:135,Zoology:110,Total:329,Rank:860},
+        "Geena Krish":{Physics:50,Chemistry:52,Botany:113,Zoology:78,Total:293,Rank:1056},
+        "Bani Samir Mewada":{Physics:52,Chemistry:33,Botany:113,Zoology:90,Total:288,Rank:1092},
+        "Anirwin Asokane":{Physics:56,Chemistry:30,Botany:95,Zoology:79,Total:260,Rank:1235},
+        "Arjun Nambiar":{Physics:10,Chemistry:44,Botany:88,Zoology:96,Total:238,Rank:1357},
+        "K S Vishnupriya":{Physics:23,Chemistry:2,Botany:131,Zoology:82,Total:238,Rank:1363},
+        "P Prarthna":{Physics:53,Chemistry:25,Botany:96,Zoology:61,Total:235,Rank:1374},
+        "Advika Jha":{Physics:36,Chemistry:23,Botany:92,Zoology:74,Total:225,Rank:1434},
+        "Tadapaneni Khyathi Vaishnavi":{Physics:41,Chemistry:25,Botany:78,Zoology:69,Total:213,Rank:1504},
+        "Aaryan Darsi":{Physics:52,Chemistry:8,Botany:66,Zoology:61,Total:187,Rank:1624},
+        "Venisha Manjunath":{Physics:19,Chemistry:-2,Botany:87,Zoology:54,Total:158,Rank:1763},
+        "Joshua George Mathew":{Physics:2,Chemistry:-7,Botany:90,Zoology:9,Total:94,Rank:1958}
+      } }
+    }
+  },
+  { id:"adv-aug-2026", name:"IIT Nurture Major Test 1", date:"30 Aug 2026", type:"jee",
+    batches:{
+      "XI-Adv A":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
+        "Lakshya Kankar":{Physics:90,Chemistry:91,Math:74,Total:255,Rank:5},
+        "Samvit Gupta":{Physics:52,Chemistry:65,Math:64,Total:181,Rank:59},
+        "Georgy Oommen George":{Physics:62,Chemistry:75,Math:27,Total:164,Rank:89},
+        "Rajveer Saxena":{Physics:55,Chemistry:57,Math:51,Total:163,Rank:92},
+        "Ronak Rasindh":{Physics:71,Chemistry:50,Math:40,Total:161,Rank:98},
+        "Ishaan Sibin":{Physics:68,Chemistry:63,Math:29,Total:160,Rank:99},
+        "T.R.Easwar":{Physics:42,Chemistry:59,Math:50,Total:151,Rank:107},
+        "Veda Srishti Dinnepu":{Physics:52,Chemistry:61,Math:37,Total:150,Rank:108},
+        "Akshaj Chakrapani":{Physics:62,Chemistry:46,Math:36,Total:144,Rank:121},
+        "Sreehari Ravi Prasad":{Physics:43,Chemistry:65,Math:29,Total:137,Rank:134},
+        "Shrey Dusad":{Physics:56,Chemistry:53,Math:25,Total:134,Rank:140},
+        "Krisha Riteshkumar Panchal":{Physics:55,Chemistry:53,Math:19,Total:127,Rank:150},
+        "Manmay Panda":{Physics:40,Chemistry:61,Math:22,Total:123,Rank:157},
+        "Priyasha Rath":{Physics:50,Chemistry:42,Math:27,Total:119,Rank:163},
+        "Ayaan Anugrah Lall":{Physics:54,Chemistry:30,Math:34,Total:118,Rank:165},
+        "Athul Mathew":{Physics:47,Chemistry:42,Math:28,Total:117,Rank:167},
+        "Lipika Panda":{Physics:51,Chemistry:39,Math:26,Total:116,Rank:169},
+        "Adhrit Das":{Physics:50,Chemistry:43,Math:22,Total:115,Rank:171},
+        "Saniddhya Das":{Physics:39,Chemistry:45,Math:29,Total:113,Rank:174},
+        "Diya Aju":{Physics:46,Chemistry:40,Math:25,Total:111,Rank:178},
+        "Tanushkaa M":{Physics:51,Chemistry:31,Math:27,Total:109,Rank:181},
+        "Aarya Sachin Kulkarni":{Physics:53,Chemistry:34,Math:22,Total:109,Rank:182},
+        "Aditya Pandey":{Physics:39,Chemistry:36,Math:29,Total:104,Rank:189},
+        "Rishabh Mallya H":{Physics:37,Chemistry:40,Math:25,Total:102,Rank:191},
+        "Gagan M.N":{Physics:47,Chemistry:37,Math:18,Total:102,Rank:192},
+        "Kanisshka B":{Physics:44,Chemistry:28,Math:26,Total:98,Rank:201},
+        "Anushree Srenivasan":{Physics:49,Chemistry:24,Math:24,Total:97,Rank:204},
+        "Dhruv Naga Aditya Tiruveedula":{Physics:55,Chemistry:0,Math:41,Total:96,Rank:205},
+        "Preya Mankad":{Physics:32,Chemistry:41,Math:22,Total:95,Rank:209},
+        "Aksh Raturi":{Physics:58,Chemistry:26,Math:11,Total:95,Rank:210},
+        "Kanav Gupta":{Physics:32,Chemistry:28,Math:32,Total:92,Rank:211},
+        "Neelakantan Kaplingat":{Physics:36,Chemistry:33,Math:15,Total:84,Rank:229}
+      } },
+      "XI-Adv B":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
+        "Aditya Anand":{Physics:61,Chemistry:33,Math:27,Total:121,Rank:159},
+        "Dhruv Sai Paapisetty":{Physics:43,Chemistry:44,Math:17,Total:104,Rank:190},
+        "Jitesh Karthik":{Physics:47,Chemistry:43,Math:12,Total:102,Rank:193},
+        "Neel Joshi":{Physics:39,Chemistry:32,Math:29,Total:100,Rank:195},
+        "Ashish Kumar Barik":{Physics:40,Chemistry:45,Math:15,Total:100,Rank:196},
+        "Parameswaran Kaplingat":{Physics:39,Chemistry:32,Math:28,Total:99,Rank:197},
+        "Shubh Choudhary":{Physics:37,Chemistry:46,Math:16,Total:99,Rank:199},
+        "Shashwat Chandra":{Physics:34,Chemistry:44,Math:12,Total:90,Rank:215},
+        "Angel Mary Asish":{Physics:42,Chemistry:23,Math:19,Total:84,Rank:228},
+        "Adityaram Arunaachalam":{Physics:38,Chemistry:14,Math:31,Total:83,Rank:230},
+        "Chetan Devireddy":{Physics:31,Chemistry:26,Math:18,Total:75,Rank:243},
+        "Rishitha Reddy Duddukunta":{Physics:39,Chemistry:21,Math:14,Total:74,Rank:244},
+        "Angela Bino":{Physics:29,Chemistry:31,Math:13,Total:73,Rank:248},
+        "Aakriti":{Physics:33,Chemistry:18,Math:19,Total:70,Rank:251},
+        "Naissha Saini":{Physics:42,Chemistry:18,Math:8,Total:68,Rank:257},
+        "Aadhya Ganesh":{Physics:28,Chemistry:28,Math:10,Total:66,Rank:263},
+        "Sharada Koona Srinivasan":{Physics:27,Chemistry:10,Math:20,Total:57,Rank:271},
+        "Rakshitha":{Physics:27,Chemistry:15,Math:15,Total:57,Rank:273},
+        "Rishita Baruah":{Physics:34,Chemistry:10,Math:12,Total:56,Rank:275},
+        "Kabir Yadav":{Physics:23,Chemistry:15,Math:13,Total:51,Rank:280},
+        "Lakshya Malik":{Physics:13,Chemistry:15,Math:21,Total:49,Rank:281},
+        "Ahana Ghosh Roy":{Physics:28,Chemistry:7,Math:14,Total:49,Rank:282},
+        "Avi Mishra":{Physics:19,Chemistry:18,Math:12,Total:49,Rank:283},
+        "Rithika Reddy Enaganti":{Physics:11,Chemistry:11,Math:26,Total:48,Rank:285},
+        "Shourya Ghosh":{Physics:8,Chemistry:10,Math:26,Total:44,Rank:289},
+        "Lalitha Samanvita Matte":{Physics:0,Chemistry:19,Math:15,Total:34,Rank:301}
+      } }
+    }
+  },
   { id:"jee-main-jul-2026", name:"JEE MAIN Internal Test 2", date:"19 Jul 2026", type:"jee",
     batches:{
       "XI-Adv A":{ maxMarks:{Physics:100,Chemistry:100,Math:100,Total:300}, scores:{
